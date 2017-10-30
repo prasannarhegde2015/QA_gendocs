@@ -1,0 +1,6 @@
+IF at all we get any error on executing maven projects whihc worked on other machine but not working on current machine
+Then  compltely delete .m2/* and let maven rebuild repository under .m2/repository
+It can happen that due to discrepencey in m2 repository you get stanrgeer errors like NoClassDef found etc
+Soliution is to rebuild local maven repository
+
+****************It is very very Important ********************
