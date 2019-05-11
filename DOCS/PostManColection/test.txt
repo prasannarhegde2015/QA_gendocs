@@ -1,0 +1,1 @@
+We can create PostMan Collection and executre from command line using NewMan tool
