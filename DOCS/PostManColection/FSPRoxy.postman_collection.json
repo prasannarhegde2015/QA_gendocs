@@ -1,0 +1,1191 @@
+{
+	"info": {
+		"_postman_id": "6035083a-beeb-4ee8-9288-c656bfe67104",
+		"name": "FSPRoxy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetCommon",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					},
+					{
+						"key": "Authorization",
+						"value": "NTLM TlRMTVNTUAADAAAAGAAYAFwAAAAYABgAdAAAAAYABgBIAAAADgAOAE4AAAAAAAAAXAAAAAAAAACMAAAABYKIogUBKAoAAAAPVwBGAFQARQAxADUAOQAyADcAOQBwk+5kVuDU0wAAAAAAAAAAAAAAAAAAAACzc1X4FIKKv5G/8WCLEqaySyFWFTAKVs0=",
+						"type": "text"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:2678/languages/en-US/common.lang.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2678",
+					"path": [
+						"languages",
+						"en-US",
+						"common.lang.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEnums",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					},
+					{
+						"key": "Authorization",
+						"value": "NTLM TlRMTVNTUAADAAAAGAAYAFwAAAAYABgAdAAAAAYABgBIAAAADgAOAE4AAAAAAAAAXAAAAAAAAACMAAAABYKIogUBKAoAAAAPVwBGAFQARQAxADUAOQAyADcAOQBwk+5kVuDU0wAAAAAAAAAAAAAAAAAAAACzc1X4FIKKv5G/8WCLEqaySyFWFTAKVs0=",
+						"type": "text"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:2678/languages/en-US/generated/enums.lang.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2678",
+					"path": [
+						"languages",
+						"en-US",
+						"generated",
+						"enums.lang.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setLocale",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/TokenService/SetLocale/en-US",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"TokenService",
+						"SetLocale",
+						"en-US"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateToekn",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/TokenService/CreateToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"TokenService",
+						"CreateToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllOne",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/License/All",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"License",
+						"All"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GroupFilterDisplay",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/Wells/GroupFilterDisplay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Wells",
+						"GroupFilterDisplay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WellFilterOne",
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Access-Control-Request-Method",
+						"value": "POST"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					},
+					{
+						"key": "Access-Control-Request-Headers",
+						"value": "content-type"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/Wells/Well/Filter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Wells",
+						"Well",
+						"Filter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETSystemSettin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/Settings/SystemSetting?name=Enable%20Pass-through%20Authentication%20for%20SCADA%20Commands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Settings",
+						"SystemSetting"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Enable%20Pass-through%20Authentication%20for%20SCADA%20Commands"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPublicKey",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/Authentication/GetPublicKey",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Authentication",
+						"GetPublicKey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POSTFilter",
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"url": {
+					"raw": "http://localhost/Wells/Well/Filter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Wells",
+						"Well",
+						"Filter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAssetsAll",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/SurfaceNetworkService/Asset/All",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"SurfaceNetworkService",
+						"Asset",
+						"All"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSeetingForEdgeDefault",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "299c33e8-bc78-4259-bdb7-312c837ab13f",
+						"exec": [
+							"pm.test(\"Edge Value\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.Setting.Name).to.eql(\"ForeSite for Edge\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/Settings/SystemSetting?name=ForeSite%20For%20Edge",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Settings",
+						"SystemSetting"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "ForeSite%20For%20Edge"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OPTAllKPI",
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Access-Control-Request-Method",
+						"value": "POST"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					},
+					{
+						"key": "Access-Control-Request-Headers",
+						"value": "content-type"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/PEDashboard/KPI/All",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PEDashboard",
+						"KPI",
+						"All"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETKPIALL",
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Access-Control-Request-Method",
+						"value": "POST"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					},
+					{
+						"key": "Access-Control-Request-Headers",
+						"value": "content-type"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/PEDashboard/KPI/All",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PEDashboard",
+						"KPI",
+						"All"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WellFilterTwo",
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Access-Control-Request-Method",
+						"value": "POST"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					},
+					{
+						"key": "Access-Control-Request-Headers",
+						"value": "content-type"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/Wells/WellFilter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Wells",
+						"WellFilter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POSTWellFilter",
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[]"
+				},
+				"url": {
+					"raw": "http://localhost/Wells/WellFilter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Wells",
+						"WellFilter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostAllKPI",
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"url": {
+					"raw": "http://localhost/PEDashboard/KPI/All",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PEDashboard",
+						"KPI",
+						"All"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Trend",
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "domain",
+							"value": "WFT",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "E159279",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Lowis2019APR;",
+							"type": "string"
+						},
+						{
+							"key": "disableRetryRequest",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Referer",
+						"value": "http://localhost:2678/"
+					},
+					{
+						"key": "Origin",
+						"value": "http://localhost:2678"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"url": {
+					"raw": "http://localhost/PEDashboard/Trend/All",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"PEDashboard",
+						"Trend",
+						"All"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
