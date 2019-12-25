@@ -27,3 +27,13 @@ Set-ExecutionPolicy Unrestricted
 Get-CimInstance Win32_OperatingSystem
 
 Get-ChildItem -Path HKLM:\Software -Recurse -ErrorAction SilentlyContinue | Where-Object -FilterScript {($_.Name -Like "*Chrome*") }
+Get-ChildItem -Path HKLM:\Software -Recurse -ErrorAction SilentlyContinue | Where-Object -FilterScript {($_.Name -Like "*Chrome*") }
+
+gci . -rec -ea SilentlyContinue | 
+   % { 
+      Get-ChildItem -Path hklm:\ -Recurse
+      if((get-itemproperty -Path Registry::HKLM) -match $searchText)
+      { 
+         $_.PsPath
+      } 
+   } 
