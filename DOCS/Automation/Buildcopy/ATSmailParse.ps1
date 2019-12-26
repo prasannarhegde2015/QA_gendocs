@@ -15,14 +15,16 @@ while ($true)
     # get New count later
     $messages = $NameSpace.Folders.Item(1).Folders.Item($Folder).Items
     $newcount=$messages.Count
-  Write-Host "Old count: "$oldcount
-  Write-Host "New count: "$newcount
+    Write-Host "Old count: "$oldcount
+    Write-Host "New count: "$newcount
   if ($newcount -ne $oldcount)
   {
     $message = $messages |Sort ReceivedTime | select -last 1
     $subject= $message.Subject
     if ($subject.Contains("DPH") -eq $false)
     {
+     
+
         $messgehtmlbody=$message.HTMLBody
         $sourcepath=$messgehtmlbody | Select-String -Pattern 'LogFile=\\\\.*"'  -AllMatches
         $reresults=$sourcepath.Matches.Value |select -last 1
@@ -35,9 +37,19 @@ while ($true)
         if (-not (Test-Path $target"\"$reresult) )
         {
             New-Item -Path $target"\"$reresults -ItemType "directory"
+            
         }
         $sourcedir=$sourcepath+"\\ATS\\UQAScripts"
-        Copy-Item   -Path $sourcedir -Recurse -Destination $target"\"$reresults
+        if ($subject.Contains("UPG") -eq $false)
+             {
+               New-Item -Path $target"\"$reresults"\UPG" -ItemType "directory"
+               Copy-Item   -Path $sourcedir -Recurse -Destination $target"\"$reresults"\UPG"
+             }
+            else
+            {
+               Copy-Item   -Path $sourcedir -Recurse -Destination $target"\"$reresults
+            }
+     
     }
     }
     else
