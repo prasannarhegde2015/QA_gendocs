@@ -1,20 +1,48 @@
 #Connecting Outlook with below command
-$target=""
+
+$target="C:\Prasanna\ForeSite\UIAutomation\TestResults\ATS"
 Add-Type -assembly "Microsoft.Office.Interop.Outlook"
 $Outlook = New-Object -ComObject Outlook.Application
 $Folder = "ATS Emails"
 $Namespace = $Outlook.GetNameSpace("MAPI")
 #$NameSpace.Folders.Item(1)
 $messages = $NameSpace.Folders.Item(1).Folders.Item($Folder).Items
-Write-Host "Count of emails in outlook are "$OutlookFolders.Count
-$message = $messages |Sort ReceivedTime | select -last 1
-Write-Host $message.Subject
-$messgehtmlbody=$message.HTMLBody
-$sourcepath=$messgehtmlbody | Select-String -Pattern 'LogFile=\\\\.*"'  -AllMatches
-$reresults=$sourcepath.Matches.Value |select -last 1
-$sourcepath=$reresults -replace "LogFile=",""
-$sourcepath=$sourcepath -replace "\\auto.log""",""
-$buildnumber=$sourcepath | Select-String -Pattern '\d\.+\d.+\d.\d{3,5}'  -AllMatches
-$reresults=$buildnumber.Matches.Value | select -last 1
-Write-Host "Source Path from email is: "$sourcepath
-Write-Host "build number is : "$reresults
+Write-Host "Count of emails in outlook are:  "$messages.Count
+$oldcount = $messages.Count
+
+while ($true)
+{
+    # get New count later
+    $messages = $NameSpace.Folders.Item(1).Folders.Item($Folder).Items
+    $newcount=$messages.Count
+  Write-Host "Old count: "$oldcount
+  Write-Host "New count: "$newcount
+  if ($newcount -ne $oldcount)
+  {
+    $message = $messages |Sort ReceivedTime | select -last 1
+    $subject= $message.Subject
+    if ($subject.Contains("DPH") -eq $false)
+    {
+        $messgehtmlbody=$message.HTMLBody
+        $sourcepath=$messgehtmlbody | Select-String -Pattern 'LogFile=\\\\.*"'  -AllMatches
+        $reresults=$sourcepath.Matches.Value |select -last 1
+        $sourcepath=$reresults -replace "LogFile=",""
+        $sourcepath=$sourcepath -replace "\\auto.log""",""
+        $buildnumber=$sourcepath | Select-String -Pattern '\d\.+\d.+\d.\d{3,5}'  -AllMatches
+        $reresults=$buildnumber.Matches.Value | select -last 1
+        Write-Host "Source Path from email is: "$sourcepath
+        Write-Host "build number is : "$reresults
+        if (-not (Test-Path $target"\"$reresult) )
+        {
+            New-Item -Path $target"\"$reresults -ItemType "directory"
+        }
+        $sourcedir=$sourcepath+"\\ATS\\UQAScripts"
+        Copy-Item   -Path $sourcedir -Recurse -Destination $target"\"$reresults
+    }
+    }
+    else
+    {
+     Write-Host "No New Emails to check Idling for 10 minutes"
+     Start-Sleep -s 600
+    }
+}
