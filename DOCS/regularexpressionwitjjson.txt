@@ -1,0 +1,20 @@
+Example String is like
+
+"AlarmMessage": [
+				"DM (DORMANT), High Tubing Head Pressure (1)"
+			],
+SometthingElse : "",
+"AlarmMessage": [
+				"DM (DORMANT), High Tubing Head Pressure (1)"
+			],
+"AlarmMessage": null,
+"AlarmMessage": [ 
+                      ""
+                 ].
+      
+      
+      
+      Example apptern that matches
+    "AlarmMessage":\s\[.*\n(.*)\n?[aA-zZ](.*)
+    
+    test on : http://regexstorm.net/tester
