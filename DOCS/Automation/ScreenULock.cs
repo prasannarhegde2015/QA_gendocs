@@ -28,16 +28,24 @@ namespace ScreenUnlock
 
         static void Main(string[] args)
         {
+            do
+            {
+                while (!Console.KeyAvailable)
+                {
+                    PreventSleep();
+                    System.Threading.Thread.Sleep(1000);
+                }
+            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
 
-            PreventSleep();
+           
         }
 
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         static extern EXECUTION_STATE SetThreadExecutionState(EXECUTION_STATE esFlags);
         static void PreventSleep()
         {
-            // Prevent Idle-to-Sleep (monitor not affected) (see note above)
-            SetThreadExecutionState(EXECUTION_STATE.ES_CONTINUOUS | EXECUTION_STATE.ES_AWAYMODE_REQUIRED);
+            // Prevent Screen from Locking
+            SetThreadExecutionState(EXECUTION_STATE.ES_DISPLAY_REQUIRED | EXECUTION_STATE.ES_CONTINUOUS);
         }
     }
 }
