@@ -1,37 +1,47 @@
-use unit01
-Select count(*)  from Job  where jobPrimaryKey not in ( -100,-200,-300) and jobFK_Assembly not in (-100)
+use Foresite_VS
+
+Select * from r_JobStatus
 --Exclude  and System Jobs  and Template Jobs
-DECLARE @PJ INT, @RJ INT, @CJ INT, @NJ INT
+DECLARE @PJ INT, @RJ INT, @CJ INT, @NJ INT,@TotalJobs INT, @jobcount INT, @jobcountfornostatus INT
+set @TotalJobs = -1
 set @NJ= 18
 set @PJ = 7
 Set @RJ = 4
 set @CJ = 3
+set @NJ= 1002408265751
+set @PJ = 1002408265735
+Set @RJ = 1002408265731
+set @CJ = 1002408265729
+set @TotalJobs = (Select count(*)  from Job  where jobPrimaryKey not in ( -100,-200,-300) and jobFK_Assembly not in (-100))
+set @jobcount = 10000 --- Update as per DB
+set @jobcountfornostatus = @TotalJobs - (3 *  @jobcount) --- Update  as per DB
+print @jobcountfornostatus
 
 Update job set jobFK_r_JobStatus=1 where jobPrimaryKey not in ( -100,-200,-300) and jobFK_Assembly not in (-100) --Update to Some Dummay Key 
 Update job set jobFK_r_JobStatus=@NJ where jobPrimaryKey in 
-(Select top 10009 jobPrimaryKey from Job 
+(Select top (@jobcountfornostatus) jobPrimaryKey from Job 
   where jobPrimaryKey not in ( -100,-200,-300) and jobFK_Assembly not in (-100)
   order by NEWID()
 )
-Update job set jobFK_r_JobStatus=7 where jobPrimaryKey in
- (Select top 5000 jobPrimaryKey from Job 
+Update job set jobFK_r_JobStatus=@PJ where jobPrimaryKey in
+ (Select top (@jobcount) jobPrimaryKey from Job 
  where jobPrimaryKey not in ( -100,-200,-300) and jobFK_Assembly not in (-100) and 
  jobFK_r_JobStatus <> @NJ
  order by NEWID()
  )
 
 
-Update job set jobFK_r_JobStatus=4 where jobPrimaryKey in 
+Update job set jobFK_r_JobStatus=@RJ where jobPrimaryKey in 
 (
-	Select top 5000 jobPrimaryKey from Job 
+	Select top (@jobcount) jobPrimaryKey from Job 
 	where jobPrimaryKey not in ( -100,-200,-300) and jobFK_Assembly not in (-100)
 	 and jobFK_r_JobStatus <> @NJ
 	 and jobFK_r_JobStatus <> @PJ
 	order by NEWID()
 )
-Update job set jobFK_r_JobStatus=3 where jobPrimaryKey in  
+Update job set jobFK_r_JobStatus=@CJ where jobPrimaryKey in  
 (
-	Select top 5000 jobPrimaryKey from Job 
+	Select top (@jobcount) jobPrimaryKey from Job 
 	where jobPrimaryKey not in ( -100,-200,-300) and jobFK_Assembly not in (-100) 
 	and jobFK_r_JobStatus <>  @NJ  
 	and jobFK_r_JobStatus <>  @PJ
