@@ -1,13 +1,9 @@
 use Foresite_VS
 
-Select * from r_JobStatus
+
 --Exclude  and System Jobs  and Template Jobs
-DECLARE @PJ INT, @RJ INT, @CJ INT, @NJ INT,@TotalJobs INT, @jobcount INT, @jobcountfornostatus INT
+DECLARE @PJ BIGINT, @RJ BIGINT, @CJ BIGINT, @NJ BIGINT,@TotalJobs BIGINT, @jobcount BIGINT, @jobcountfornostatus BIGINT
 set @TotalJobs = -1
-set @NJ= 18
-set @PJ = 7
-Set @RJ = 4
-set @CJ = 3
 set @NJ= 1002408265751
 set @PJ = 1002408265735
 Set @RJ = 1002408265731
