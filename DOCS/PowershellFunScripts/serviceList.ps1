@@ -1,24 +1,26 @@
-$allservices = Get-Service | Where-object { $_.Name -Like "*APACHE*" }
-$totalrow = "" | Select-Object SrNo, Name, Status
-$Cnt=1
-foreach($service  in $allservices)
+$services = Get-Service | Where-Object { $_.Name -Like "*Weatherford*" -or $_.Name -Like "*Dynacard*" } |Select-Object Name , Status
+$allrows=@()
+$numberedservices = "" |Select-Object SrNo,Name,Status
+$counter=1
+foreach($service in $Services)
 {
 
-    $totalrow.SrNo = $Cnt
-    $totalrow.Name = $service.Name
-    $totalrow.Status = $service.Status
-	$Cnt=$Cnt+1
+$allrows += [PSCustomObject]@{
+		SrNo    = $counter
+        Name = $service.Name
+        Status     = $service.Status
+    }
+	$counter++
 }
-foreach ($row in $totalrow)
+Write-Host ("{0,-8}{1,-50}{2,-30}" -f "SrNo","Name","Status") -ForegroundColor white
+foreach($numberedservice in $allrows )
 {
-	
-	if ($row.Status -eq "Stopped" )
+	If ($numberedservice.Status -eq "Stopped")
 	{
-		Write-Host ("{0,-5} {1,-25} {2,-25}" -f $row.SrNo, $row.Name, $row.Status)  -Foregroundcolor red
+		Write-Host ("{0,-8}{1,-50}{2,-30}" -f $numberedservice.SrNo,$numberedservice.Name,$numberedservice.Status) -ForegroundColor red
 	}
 	else
 	{
-		Write-Host ("{0,-5} {1,-25} {2,-25}" -f $row.SrNo, $row.Name, $row.Status)  -Foregroundcolor green
+		Write-Host ("{0,-8}{1,-50}{2,-50}" -f $numberedservice.SrNo,$numberedservice.Name,$numberedservice.Status) -ForegroundColor green
 	}
-	
 }
